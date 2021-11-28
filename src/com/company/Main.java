@@ -9,10 +9,11 @@ public class Main {
         Employee[] employees = new Employee[10];
         createList(employees);
         checkNull(employees);
-        System.out.println("Сумма всех зарплат " + sumSalary());
-        System.out.println("Максимальная зарплата " + maxSalary());
+        sumSalary(employees);
+
+       /* System.out.println("Максимальная зарплата " + maxSalary());
         System.out.println("Минимальная зарплата " + minSalary());
-        System.out.println("Средняя зарплата " + midSalary());
+        System.out.println("Средняя зарплата " + midSalary());*/
 
 
         //System.out.println("Employee.getName() = " + Employee.getName());
@@ -32,26 +33,33 @@ public class Main {
     }
 
     public static void createList(Employee[] employees){
-        addEmployee(employees, new Employee("Ivan", "Ivanovich", "Ivanov", generateRandomArray()));
-        addEmployee(employees, new Employee("Dmitry", "Dmitrievich", "Dmitryev", generateRandomArray()));
-        addEmployee(employees, new Employee("Sidor", "Sidirovich", "Sidorin", generateRandomArray()));
-        addEmployee(employees, new Employee("Egor", "Egorovich", "Egorov", generateRandomArray()));
-        addEmployee(employees, new Employee("Klim", "Klimovich", "Klimov", generateRandomArray()));
-        addEmployee(employees, new Employee("Karp", "Karpovich", "Karpov", generateRandomArray()));
-        addEmployee(employees, new Employee("Sergey", "Sergeevich", "Sergeev", generateRandomArray()));
+        addEmployee(employees, new Employee("Ivan", "Ivanovich", "Ivanov", generateRandomSalary(), generateRandomDepartament()));
+        addEmployee(employees, new Employee("Dmitry", "Dmitrievich", "Dmitryev", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Sidor", "Sidirovich", "Sidorin", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Egor", "Egorovich", "Egorov", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Klim", "Klimovich", "Klimov", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Karp", "Karpovich", "Karpov", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Sergey", "Sergeevich", "Sergeev", generateRandomSalary(),generateRandomDepartament()));
 
     }
 
-    public static int[] generateRandomArray() {
+    public static int generateRandomSalary() {
         java.util.Random random = new java.util.Random();
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
+        int sal = random.nextInt(100_000) + 100_000;
+        return sal;
+    }
+
+    public static int[] generateRandomDepartament() {
+        java.util.Random random = new java.util.Random();
+        int dep[] = new int[5];
+        for(int i=0;i < dep.length;i++){
+            dep[i]=random.nextInt(5);
         }
-        return arr;
+        return dep;
     }
 
     public static void printFullInfo(Employee empl) {
+
         System.out.println(String.join(": ",
                 empl.getName() + " " + empl.getSecondName() + " " + empl.getThirdName(),
                 String.valueOf(empl.getSalary() + " salary")
@@ -66,45 +74,28 @@ public class Main {
         }
     }
 
-    public static int sumSalary() {
-        int sum=0;
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            sum += generateRandomArray();
-        }
-        return sum;
+    public static void sumSalary(Employee[] emplo) {
+
+        int sum =0;
+        sum+=emplo.getSalary();
+        System.out.println("Сумма всех зарплат " + sum);
     }
 
-    public static int maxSalary() {
+    public static void maxSalary() {
         int max = 0;
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            if(max>generateRandomArray()){
-                max=generateRandomArray();
-                return max;
-            }
-        }
-        return max;
+
     }
 
     public static void minSalary() {
         int min = 0;
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            if(min<generateRandomArray()){
-                min=generateRandomArray();
-                return min;
-            }
-        }
-        return min;
+
 
     }
 
     public static void midSalary() {
         int sum=0;
         int j=0;
-        for (int i = 0; i < generateRandomArray().length; i++) {
-            sum += generateRandomArray();
-            j=i;
-        }
-        return sum/j;
+
 
     }
 
