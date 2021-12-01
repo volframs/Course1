@@ -5,7 +5,6 @@ public class Employee {
     private final String secondName;
     private final String thirdName;
     private int salary;
-    private int counter;
     private int department;
     private int id;
 
@@ -16,7 +15,7 @@ public class Employee {
         this.thirdName = thirdName;
         this.salary=salary;
         this.department= department;
-        id=counter;
+        this.id+=id;
     }
 
     public static String getName() {

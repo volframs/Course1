@@ -44,7 +44,7 @@ public class Main {
         java.util.Random random = new java.util.Random();
         int dep = 5;
         for(int i=0;i < dep;i++){
-            dep=random.nextInt(5);
+            dep=random.nextInt(5)+1;
         }
         return dep;
     }
@@ -53,7 +53,9 @@ public class Main {
 
         System.out.println(String.join(": ",
                 employ.getName() + " " + employ.getSecondName() + " " + employ.getThirdName(),
-                String.valueOf(employ.getSalary() + " salary")
+                String.valueOf(employ.getSalary() + " salary"),
+                employ.getDepartment() + " department's number",
+                employ.getId() + " number of id"
         ));
     }
 
@@ -100,5 +102,5 @@ public class Main {
 }
 
 
-  
+
 
