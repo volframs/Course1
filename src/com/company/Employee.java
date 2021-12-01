@@ -6,11 +6,11 @@ public class Employee {
     private final String thirdName;
     private int salary;
     private int counter;
-    private int[] department = new int[5];
+    private int department;
     private int id;
 
 
-    public Employee(String name, String secondName, String thirdName, int salary, int[] department) {
+    public Employee(String name, String secondName, String thirdName, int salary, int department) {
         this.name = name;
         this.secondName = secondName;
         this.thirdName = thirdName;
@@ -35,7 +35,7 @@ public class Employee {
         return salary;
     }
 
-    public int[] getDepartment() {
+    public int getDepartment() {
         return department;
     }
 
@@ -47,7 +47,7 @@ public class Employee {
         this.salary=salary;
     }
 
-    public void setDepartment(int[] department) {
-        this.department=department ;
+    public void setDepartment(int department) {
+        this.department=department;
     }
 }
