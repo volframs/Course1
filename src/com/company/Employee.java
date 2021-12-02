@@ -9,13 +9,13 @@ public class Employee {
     private int id;
 
 
-    public Employee(String name, String secondName, String thirdName, int salary, int department) {
+    public Employee(String name, String secondName, String thirdName, int salary, int department, int id) {
         this.name = name;
         this.secondName = secondName;
         this.thirdName = thirdName;
         this.salary=salary;
         this.department= department;
-        this.id+=id;
+        this.id=id;
     }
 
     public static String getName() {

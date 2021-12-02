@@ -9,6 +9,7 @@ public class Main {
         Employee[] employees = new Employee[10];
         createList(employees);
         printFullInfo(employees);
+        System.out.println(id);//самопроверка
         //System.out.println("Employee.getName() = " + Employee.getName());
     }
 
@@ -24,13 +25,13 @@ public class Main {
     }
 
     public static void createList(Employee[] employees){
-        addEmployee(employees, new Employee("Ivan", "Ivanovich", "Ivanov", generateRandomSalary(), generateRandomDepartament()));
-        addEmployee(employees, new Employee("Dmitry", "Dmitrievich", "Dmitryev", generateRandomSalary(),generateRandomDepartament()));
-        addEmployee(employees, new Employee("Sidor", "Sidirovich", "Sidorin", generateRandomSalary(),generateRandomDepartament()));
-        addEmployee(employees, new Employee("Egor", "Egorovich", "Egorov", generateRandomSalary(),generateRandomDepartament()));
-        addEmployee(employees, new Employee("Klim", "Klimovich", "Klimov", generateRandomSalary(),generateRandomDepartament()));
-        addEmployee(employees, new Employee("Karp", "Karpovich", "Karpov", generateRandomSalary(),generateRandomDepartament()));
-        addEmployee(employees, new Employee("Sergey", "Sergeevich", "Sergeev", generateRandomSalary(),generateRandomDepartament()));
+        addEmployee(employees, new Employee("Ivan", "Ivanovich", "Ivanov", generateRandomSalary(), generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Dmitry", "Dmitrievich", "Dmitryev", generateRandomSalary(),generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Sidor", "Sidirovich", "Sidorin", generateRandomSalary(),generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Egor", "Egorovich", "Egorov", generateRandomSalary(),generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Klim", "Klimovich", "Klimov", generateRandomSalary(),generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Karp", "Karpovich", "Karpov", generateRandomSalary(),generateRandomDepartament(),generateID()));
+        addEmployee(employees, new Employee("Sergey", "Sergeevich", "Sergeev", generateRandomSalary(),generateRandomDepartament(),generateID()));
 
     }
 
@@ -38,6 +39,14 @@ public class Main {
         java.util.Random random = new java.util.Random();
         int sal = random.nextInt(100_000) + 100_000;
         return sal;
+    }
+
+
+    public static int generateID() {
+        int tempID = id;
+        tempID+=1;
+        id = tempID;
+        return id;
     }
 
     public static int generateRandomDepartament() {
