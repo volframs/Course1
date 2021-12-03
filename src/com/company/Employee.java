@@ -11,6 +11,7 @@ public class Employee {
 
 
     public Employee(String name, String secondName, String thirdName, int salary, int department, int counter) {
+        this.counter=counter;
         this.name = name;
         this.secondName = secondName;
         this.thirdName = thirdName;
@@ -21,6 +22,10 @@ public class Employee {
 
     public static String getName() {
         return name;
+    }
+
+    public static int getCounter() {
+        return counter;
     }
 
     public String getSecondName() {
