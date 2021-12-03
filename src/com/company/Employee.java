@@ -10,8 +10,8 @@ public class Employee {
     private int id;
 
 
-    public Employee(String name, String secondName, String thirdName, int salary, int department, int counter) {
-        this.counter=counter;
+    public Employee(String name, String secondName, String thirdName, int salary, int department, int id) {
+        id=counter;
         this.name = name;
         this.secondName = secondName;
         this.thirdName = thirdName;
