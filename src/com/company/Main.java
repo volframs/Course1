@@ -9,7 +9,7 @@ public class Main {
         Employee[] employees = new Employee[10];
         createList(employees);
         printFullInfo(employees);
-        System.out.println(id);//самопроверка
+        //System.out.println(id);//самопроверка
         //System.out.println("Employee.getName() = " + Employee.getName());
     }
 

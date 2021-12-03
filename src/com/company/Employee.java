@@ -4,18 +4,19 @@ public class Employee {
     private static String name;
     private final String secondName;
     private final String thirdName;
+    private static int counter;
     private int salary;
     private int department;
     private int id;
 
 
-    public Employee(String name, String secondName, String thirdName, int salary, int department, int id) {
+    public Employee(String name, String secondName, String thirdName, int salary, int department, int counter) {
         this.name = name;
         this.secondName = secondName;
         this.thirdName = thirdName;
         this.salary=salary;
         this.department= department;
-        this.id=id;
+        this.id = counter++;
     }
 
     public static String getName() {
